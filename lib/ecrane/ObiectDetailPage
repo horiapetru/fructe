@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'models/obiect.dart';
+import 'obiectListPage.dart';
 
 class ObiectDetailPage extends StatelessWidget {
   final Obiect obiect;

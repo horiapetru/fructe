@@ -4,6 +4,61 @@ import 'package:flutter/material.dart';
 import 'models/obiect.dart';
 import 'ObiectDetailPage';
 
+final List<Obiect> obiecte = [
+  Obiect(
+      name: 'banane',
+      imageAsset: 'assets/banane.png',
+      details:
+          'Banana este un fruct alungit, comestibil. Din punct de vedere botanic o bacă. Produsă de anumite specii erbacee din genul Musa.\n\n'
+          'IMPORTANTA:\n\n'
+          '=> Bananele reprezintă a 4-a cea mai importantă cultură (după orez, grâu și porumb) din lumea în curs de dezvoltare.\n'
+          '=> Banana este vitală pentru securitatea alimentară a multor țări tropicale și subtropicale și este cel mai popular fruct din țările industrializate. \n'
+          '=> Bananele sunt în mod deosebit importante în Africa de Sud, unde constituie principalul aliment de bază pentru circa 50% din populație.\n'
+          '=> 90% din producția de banane este realizată în mici ferme și este consumată local.'),
+  Obiect(
+      name: 'rosii',
+      imageAsset: 'assets/rosii.png',
+      details:
+          'Roșia (pătlăgica roșie sau mai rar tomata), numită științific Solanum lycopersicum, '
+          'este o plantă din familia Solanaceae, apropiată pe linie genetică de următoarele plante, '
+          'de asemenea originare din „Lumea Nouă”: tutun, ardei, cartof, vânătă și physalis alkekengi. '),
+  Obiect(
+      name: 'morcovi',
+      imageAsset: 'assets/morcovi.png',
+      details:
+          'Morcovul (Daucus carota subsp. sativus ) este o plantă plantă bienală din familia Apiaceae '
+          '(numită și Umbelliferae), cultivată pe scară largă pentru rădăcina sa cărnoasă, comestibilă, '
+          'consumată ca legumă. Morcovul este, după cartof, principala legumă cultivată în lume pentru rădăcina '
+          'sa.'),
+  Obiect(
+      name: 'mere',
+      imageAsset: 'assets/mere.png',
+      details:
+          'Mărul (Malus domestica) este o specie de plante din familia Rosaceae. Această specie cuprinde între '
+          '44 și 55 de soiuri, care se prezintă ca pomi sau arbuști. Varietățile de măr cresc în zona '
+          'temperată nordică din Europa, Asia și America de Nord, printre acestea existând un număr mare '
+          'de hibrizi.'),
+  Obiect(
+      name: 'pere',
+      imageAsset: 'assets/pere.png',
+      details:
+          'Para este considerată sora mărului, deoarece fac parte din aceeași familie și ambele sunt numite'
+          'poame. Au aproximativ aceeași perioadă de dezvoltare și conțin aceleași vitamine și minerale, dar '
+          'în proporții diferite.'),
+  Obiect(
+      name: 'lamai',
+      imageAsset: 'assets/lamai.png',
+      details:
+          'Lămâiul (Citrus limon) este un arbust din familia Rutaceae, nativ din Asia, de la 5 la 10 m înălțime,'
+          'considerat veșnic verde.'),
+  Obiect(
+      name: 'ceapa',
+      imageAsset: 'assets/ceapa.png',
+      details:
+          'Ceapa (Allium cepa L.), denumită și ceapă de bucătărie sau ceapă de grădină, este o legumă. '
+          'Este cea mai cultivată specie din genul Allium, care conține câteva sute de specii, printre '
+          'care prazul, șalota, ceapa perenă și usturoiul.'),
+];
 void main() {
   runApp(MyApp());
 }
@@ -19,61 +74,6 @@ class MyApp extends StatelessWidget {
 }
 
 class ObiectListPage extends StatelessWidget {
-  final List<Obiect> obiecte = [
-    Obiect(
-        name: 'banane',
-        imageAsset: 'assets/banane.png',
-        details:
-            'Banana este un fruct alungit, comestibil. Din punct de vedere botanic o bacă. Produsă de anumite specii erbacee din genul Musa.\n\n'
-            'IMPORTANTA:\n\n'
-            '=> Bananele reprezintă a 4-a cea mai importantă cultură (după orez, grâu și porumb) din lumea în curs de dezvoltare.\n'
-            '=> Banana este vitală pentru securitatea alimentară a multor țări tropicale și subtropicale și este cel mai popular fruct din țările industrializate. \n'
-            '=> Bananele sunt în mod deosebit importante în Africa de Sud, unde constituie principalul aliment de bază pentru circa 50% din populație.\n'
-            '=> 90% din producția de banane este realizată în mici ferme și este consumată local.'),
-    Obiect(
-        name: 'rosii',
-        imageAsset: 'assets/rosii.png',
-        details:
-            'Roșia (pătlăgica roșie sau mai rar tomata), numită științific Solanum lycopersicum, '
-            'este o plantă din familia Solanaceae, apropiată pe linie genetică de următoarele plante, '
-            'de asemenea originare din „Lumea Nouă”: tutun, ardei, cartof, vânătă și physalis alkekengi. '),
-    Obiect(
-        name: 'morcovi',
-        imageAsset: 'assets/morcovi.png',
-        details:
-            'Morcovul (Daucus carota subsp. sativus ) este o plantă plantă bienală din familia Apiaceae '
-            '(numită și Umbelliferae), cultivată pe scară largă pentru rădăcina sa cărnoasă, comestibilă, '
-            'consumată ca legumă. Morcovul este, după cartof, principala legumă cultivată în lume pentru rădăcina '
-            'sa.'),
-    Obiect(
-        name: 'mere',
-        imageAsset: 'assets/mere.png',
-        details:
-            'Mărul (Malus domestica) este o specie de plante din familia Rosaceae. Această specie cuprinde între '
-            '44 și 55 de soiuri, care se prezintă ca pomi sau arbuști. Varietățile de măr cresc în zona '
-            'temperată nordică din Europa, Asia și America de Nord, printre acestea existând un număr mare '
-            'de hibrizi.'),
-    Obiect(
-        name: 'pere',
-        imageAsset: 'assets/pere.png',
-        details:
-            'Para este considerată sora mărului, deoarece fac parte din aceeași familie și ambele sunt numite'
-            'poame. Au aproximativ aceeași perioadă de dezvoltare și conțin aceleași vitamine și minerale, dar '
-            'în proporții diferite.'),
-    Obiect(
-        name: 'lamai',
-        imageAsset: 'assets/lamai.png',
-        details:
-            'Lămâiul (Citrus limon) este un arbust din familia Rutaceae, nativ din Asia, de la 5 la 10 m înălțime,'
-            'considerat veșnic verde.'),
-    Obiect(
-        name: 'ceapa',
-        imageAsset: 'assets/ceapa.png',
-        details:
-            'Ceapa (Allium cepa L.), denumită și ceapă de bucătărie sau ceapă de grădină, este o legumă. '
-            'Este cea mai cultivată specie din genul Allium, care conține câteva sute de specii, printre '
-            'care prazul, șalota, ceapa perenă și usturoiul.'),
-  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -180,48 +180,45 @@ class CustomSearchDelegate extends SearchDelegate {
 
   @override
   Widget buildResults(BuildContext context) {
-    List<String> MatchQuery = [];
+    List<String> suggestions = [];
     for (var fruit in searchTerms) {
       if (fruit.toLowerCase().contains(query.toLowerCase())) {
-        MatchQuery.add(fruit);
+        suggestions.add(fruit);
       }
     }
     return ListView.builder(
-        itemCount: MatchQuery.length,
+        itemCount: suggestions.length,
         itemBuilder: (context, index) {
-          return InkWell(
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) =>
-                          ObiectDetailPage(obiect: Object[index]),
-                    ),
-                  );
-                };
-          );
-          var result = MatchQuery[index];
+          var result = suggestions[index];
           return ListTile(
             title: Text(result),
           );
         });
-        
   }
 
   @override
   Widget buildSuggestions(BuildContext context) {
-    List<String> MatchQuery = [];
+    List<String> suggestions = [];
     for (var fruit in searchTerms) {
       if (fruit.toLowerCase().contains(query.toLowerCase())) {
-        MatchQuery.add(fruit);
+        suggestions.add(fruit);
       }
     }
     return ListView.builder(
-        itemCount: MatchQuery.length,
+        itemCount: suggestions.length,
         itemBuilder: (context, index) {
-          var result = MatchQuery[index];
+          var result = suggestions[index];
           return ListTile(
             title: Text(result),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) =>
+                      ObiectDetailPage(obiect: obiecte[index]),
+                ),
+              );
+            },
           );
         });
   }
