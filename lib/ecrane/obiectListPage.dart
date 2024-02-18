@@ -100,7 +100,7 @@ class ObiectListPage extends StatelessWidget {
                   showSearch(
                       context: context, delegate: CustomSearchDelegate());
                 },
-                icon: const Icon(Icons.filter)),
+                icon: const Icon(Icons.filter_list)),
             IconButton(
                 onPressed: () {
                   showSearch(
@@ -161,6 +161,128 @@ class ObiectListPage extends StatelessWidget {
               );
             }));
   }
+}
+
+class CustomFilterDelegate {
+  List<String> filters = ['fruct', 'leguma'];
+
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: AppBar(actions: [
+          IconButton(onPressed: () {}, icon: const Icon(Icons.filter_list)),
+        ]),
+        body: ListView.builder(
+            itemCount: filters.length,
+            itemBuilder: (context, index) {
+              return InkWell(
+                onTap: () {},
+                child: Card(
+                  elevation: 5,
+                  margin: EdgeInsets.all(12),
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10.0)),
+                  child: Padding(
+                    padding: EdgeInsets.all(8.0),
+                    child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Expanded(
+                              flex: 1,
+                              child: Container(
+                                padding: EdgeInsets.all(16.0),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(obiecte[index].type,
+                                        style: TextStyle(
+                                            fontSize: 14,
+                                            fontWeight: FontWeight.bold))
+                                  ],
+                                ),
+                              ))
+                        ]),
+                  ),
+                ),
+              );
+            }));
+  }
+
+  List<Widget>? buildActions(BuildContext context) {
+    return [
+      IconButton(
+        icon: const Icon(Icons.clear),
+        onPressed: () {},
+      ),
+    ];
+  }
+
+  Widget? buildLeading(BuildContext context) {
+    return IconButton(
+      icon: const Icon(Icons.arrow_back),
+      onPressed: () {},
+    );
+  }
+
+  Widget buildResults(BuildContext context) {
+    // TODO: implement buildResults
+    throw UnimplementedError();
+  }
+
+  Widget buildSuggestions(BuildContext context) {
+    // TODO: implement buildSuggestions
+    throw UnimplementedError();
+  }
+}
+
+class CustomFilterDelegate {
+
+    List<String> filters = ['fruct', 'leguma'];
+    List<Widget>? buildActions(BuildContext context) {
+    return [
+      IconButton(
+        icon: const Icon(Icons.clear),
+        onPressed: () {
+          
+        },
+      ),
+    ];
+  }
+
+  Widget? buildLeading(BuildContext context) {
+      return IconButton(
+        icon: const Icon(Icons.arrow_back),
+        onPressed: () {},
+      );
+  }
+
+  Widget buildResults(BuildContext context) {
+    // TODO: implement buildResults
+    throw UnimplementedError();
+  }
+
+  Widget buildSuggestions(BuildContext context) {
+    List<Obiect> suggestions = obiecte.where((Obiect) {
+      return Obiect.name.toLowerCase().contains(query.toLowerCase());
+    }).toList();
+    return ListView.builder(
+        itemCount: suggestions.length,
+        itemBuilder: (context, index) {
+          var result = suggestions[index];
+          return ListTile(
+            title: Text(result.name),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => ObiectDetailPage(obiect: result),
+                ),
+              );
+            },
+          );
+        });
+  }
+  }
+}
 }
 
 class CustomSearchDelegate extends SearchDelegate {
